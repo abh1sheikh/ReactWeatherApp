@@ -28,11 +28,11 @@ const Forecast = () => {
         fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "7768240876msh5ffb329bd309cdbp1122b3jsnd3907e380bb2",
-                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
+                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+                "x-rapidapi-key": "apikey"
             }
         })
-        
+
             .then(response => response.json())
             .then(response => {
                 if (response.cod !== 200) {
@@ -50,8 +50,8 @@ const Forecast = () => {
     }
 
     return (
-            <div>
-                <h2>Find Current Weather Conditions</h2>
+        <div>
+            <h2>Find Current Weather Conditions</h2>
             <form onSubmit={getForecast}>
                 <input
                     type="text"
@@ -88,8 +88,8 @@ const Forecast = () => {
                 error={error} //new
                 loading={loading} //new
             />
-            </div>
+        </div>
     )
-    
+
 }
 export default Forecast;
